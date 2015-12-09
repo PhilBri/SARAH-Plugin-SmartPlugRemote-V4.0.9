@@ -1,0 +1,12 @@
+{
+  "modules" : { 
+    "SmartPlugRemote"  : {
+      "description": "Maginon SP-01 Plugin",
+      "version": "V4.0.9",
+      "IP":"",
+      "User":"",
+      "Password":"",
+      "w":"2"
+    }
+  }
+}

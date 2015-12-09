@@ -1,0 +1,19 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleSmartPlugRemote" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleSmartPlugRemote" scope="public">
+    <example>Sarah quelle est la météo pour demain ?</example>
+    <tag>out.action=new Object(); </tag>
+    
+    <item>Sarah</item>
+    
+    <one-of>
+      <item>Eteint la prise<tag>out.action.cmd="GpioForCrond+0"; out.action.tts="C'est fait";</tag></item>
+      <item>Allume la prise<tag>out.action.cmd="GpioForCrond+1"; out.action.tts="C'est fait";</tag></item>
+      <item>Donne moi l'etat de la prise<tag>out.action.ask="state"; out.action.tts="La prise est %"</tag></item>
+      <item>Donne moi l'intensité de la prise<tag>out.action.ask="amp"; out.action.tts="l'intensité est de %, milliampère heure";</tag></item>
+      <item>Donne moi la puissance de la prise<tag>out.action.ask="watt"; out.action.tts="la puissance est de %, watt";</tag></item>
+      <item>Donne moi la tension de la prise<tag>out.action.ask="volt"; out.action.tts="la tension est de %, volt";</tag></item>
+    </one-of>
+    
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/SmartPlugRemote";</tag>
+  </rule> 
+</grammar>

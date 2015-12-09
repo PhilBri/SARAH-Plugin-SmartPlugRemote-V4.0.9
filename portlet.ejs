@@ -1,0 +1,14 @@
+<% script ('/SmartPlugRemote/www/js/SmartPlugPortlet.js') %>
+<% stylesheet('/smartplugremote/www/less/SmartPlugPortlet.css') %>
+<% 
+  var last  = plugin.getInstance().last(); 
+%>
+<div class="logo portlet-handle">
+  <a href="plugin/SmartPlugRemote" data-action="ajax"><img src="/SmartPlugRemote/www/images/smart_plug.png"></a>
+</div>
+<div class="text">
+  <br/><span class="state"><%= last.state %></span>
+  <br/><span class="watt"><%= last.watt %> Watts</span>
+  <br/><span class="amp"><%= last.amp %> mA/h</span>
+</div>
+
