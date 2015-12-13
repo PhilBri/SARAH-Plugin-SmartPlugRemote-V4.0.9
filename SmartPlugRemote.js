@@ -1,4 +1,4 @@
-var tab = {"01":"On","00":"Off", "cmds": ["GetInfo I", "GetInfo W", "GetInfo V"]};
+var tab = {"01":"On","00":"Off", "cmds": ["GetInfo I", "GetInfo W", "GetInfo V", "GetInfo E"]};
 
 var action = exports.action = function(data, next){
     info('Plugin SmartPlugRemote is called ...', data);
@@ -51,6 +51,6 @@ var scrap = function(body) {
     if (body.match(/01I00 (.*)/)) json.amp = +body.match(/01I00 (.*)/)[1];
     if (body.match(/01W00 (.*)/)) json.watt = +body.match(/01W00 (.*)/)[1]/100;
     if (body.match(/01V00 (.*)/)) json.volt = +body.match(/01V00 (.*)/)[1]/1000;
-    if (body.match(/01E00 (.*)/)) json.volt = +body.match(/01E00 (.*)/)[1];
+    if (body.match(/01E00 (.*)/)) json.energ = +body.match(/01E00 (.*)/)[1];
     json.watt > 0.07 || json.amp > 50 ? json.state = "On" : json.state = "Off";
 }
